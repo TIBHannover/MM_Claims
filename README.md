@@ -36,6 +36,7 @@ python setup.py install
 - Download the training, validation and test split csvs in `data/`
 - Download and extract image zip files in `data/`
 - Download text jsons in `data/`
+- Download pre-trained ALBEF checkpoint from https://github.com/salesforce/ALBEF and move it to `albef_checkpoint/`
 
 
 ## Extract Features
