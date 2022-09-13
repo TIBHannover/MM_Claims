@@ -43,7 +43,7 @@ python setup.py install
 - Extract CLIP features `python extraction/feat_extract_clip.py -c rn504`
 - Extract ALBEF features `python extraction/feat_extract_albef.py`
 
-## Training SVM models (Best clip variant from paper)
+## Training SVM models (Best clip variant from Table 4 in paper)
 - Train with clip features on split with resolved label conflicts, Binary claim detection:
 
    `python training/train_svm.py -n 2 -m clip -c rn504 -d wrc`
