@@ -69,6 +69,7 @@ dependencies:
     - charset-normalizer==2.0.7
     - clang==5.0
     - click==8.0.3
+    - ekphrasis==0.5.4
     - filelock==3.3.0
     - flatbuffers==1.12
     - ftfy==6.0.3
