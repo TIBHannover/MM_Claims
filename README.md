@@ -44,15 +44,15 @@ python setup.py install
 - Extract ALBEF features `python extraction/feat_extract_albef.py`
 
 ## Training SVM models
-- Run with clip features corresponding to Table 2 (Split with resolved label conflicts), Binary claim detection:
+- Train with clip features on split with resolved label conflicts, Binary claim detection:
 
    `python training/train_svm.py -n 2 -m clip -c rn504 -d wrc`
    
-- Run with clip features corresponding to Table 2 (Split with resolved label conflicts), Tertiary claim detection:
+- Train with clip features on split with resolved label conflicts, Tertiary claim detection:
 
   `python training/train_svm.py -n 3 -m clip -c rn504 -d wrc`
   
-- Run with clip features corresponding to Table 5 (Split without label conflicts), Tertiary claim detection:
+- Train with clip features on split without label conflicts, Tertiary claim detection:
   
   `python training/train_svm.py -n 3 -m clip -c rn504 -d woc`
   
