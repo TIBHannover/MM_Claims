@@ -31,6 +31,14 @@ python setup.py install
 
 - Install clip: `pip install git+https://github.com/openai/CLIP.git`
 
+- Add two changes to `ALBEF/models/model_ve.py` to avoid path errors:
+   - At the top:
+      ```
+         import sys
+         sys.path.append('ALBEF/')
+      ```
+   - `'ALBEF/'+config['bert_config']` in line `bert_config = BertConfig.from_json_file(config['bert_config'])`
+
 
 ## Data Setup
 - Download the training, validation and test split csvs in `data/`
