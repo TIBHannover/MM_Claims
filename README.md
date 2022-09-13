@@ -31,6 +31,14 @@ python setup.py install
 
 - Install clip: `pip install git+https://github.com/openai/CLIP.git`
 
+- Add two changes to `ALBEF/models/model_ve.py` to avoid path errors:
+   - At the top:
+      ```
+         import sys
+         sys.path.append('ALBEF/')
+      ```
+   - `'ALBEF/'+config['bert_config']` in line `bert_config = BertConfig.from_json_file(config['bert_config'])`
+
 
 ## Data Setup
 - Download the training, validation and test split csvs in `data/`
@@ -40,9 +48,28 @@ python setup.py install
 
 
 ## Extract Features
-- Extract CLIP features `python extraction/feat_extract_clip.py -c rn50 -s train`
+- Extract CLIP features `python extraction/feat_extract_clip.py -c rn504`
+- Extract ALBEF features `python extraction/feat_extract_albef.py`
 
-Code: Coming soon...
+## Training SVM models (Best clip variant from Table 4 in paper)
+- Train with clip features on split with resolved label conflicts, Binary claim detection:
+
+   `python training/train_svm.py -n 2 -m clip -c rn504 -d wrc`
+   
+- Train with clip features on split with resolved label conflicts, Tertiary claim detection:
+
+  `python training/train_svm.py -n 3 -m clip -c rn50 -d wrc`
+  
+- Train with clip features on split without label conflicts, Tertiary claim detection:
+  
+  `python training/train_svm.py -n 3 -m clip -c vit16 -d woc`
+  
+- Replace `-m clip` with `-m albef` to use albef features.
+
+
+### To-Do
+- [ ] Fine-tuning ALBEF script
+- [ ] Direct inference with trained models script
 
 
 If you find the data or the code useful:
