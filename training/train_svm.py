@@ -13,7 +13,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Training SVM with Image and Text Features')
 parser.add_argument('-n','--ncls', type=int, default=2,
                     help='2 | 3')
-parser.add_argument('-d','--dtype', type=str, default='woc',
+parser.add_argument('-d','--dtype', type=str, default='wrc',
                     help='wrc | woc')
 parser.add_argument('-m','--model', type=str, default='clip',
                     help='clip | albef')

@@ -46,12 +46,12 @@ for phase in ['train', 'val', 'test']:
     text_dict = json.load(open('data/%s_text.json'%(phase), 'r', encoding='utf-8'))
     for key in tqdm(text_dict.keys()):
         text = text_dict[key]['tweet_text']
-        img = Image.open(os.path.join('data/images_labeled/', key+'.jpg')).convert('RGB')  
+        img = Image.open(os.path.join('data/images_labeled/', key+'.jpg'))
         
         proc_text = process_tweet(text, text_processor)
 
         image_tensor = img_preprocess(img).unsqueeze(0).to(device)
-        text_tokens = clip_tokenize(text, _tokenizer).to(device)
+        text_tokens = clip_tokenize(proc_text, _tokenizer).to(device)
 
         with torch.no_grad():
             image_features = model.encode_image(image_tensor)
