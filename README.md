@@ -11,8 +11,35 @@ Tweet IDs and labels are available at: https://data.uni-hannover.de/dataset/mm_c
 For access to images and tweets, send an email with organization (university/institute) and purpose details to gullal.cheema@tib.eu
 
 
-## Setup
+## Environment Setup
 
+- Create conda environment: `conda env create -f environment.yml`
+- Activate the environment: `conda activate mmclaim11`
+- Install thundersvm:
+```
+git clone https://github.com/Xtra-Computing/thundersvm.git
+
+cd thundersvm
+mkdir build
+cd build
+cmake ..
+make -j
+
+cd python
+python setup.py install
+```
+
+- Install clip: `pip install git+https://github.com/openai/CLIP.git`
+
+
+## Data Setup
+- Download the training, validation and test split csvs in `data/`
+- Download and extract image zip files in `data/`
+- Download text jsons in `data/`
+
+
+## Extract Features
+- Extract CLIP features `python extraction/feat_extract_clip.py -c rn50 -s train`
 
 Code: Coming soon...
 
