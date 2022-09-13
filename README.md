@@ -40,9 +40,28 @@ python setup.py install
 
 
 ## Extract Features
-- Extract CLIP features `python extraction/feat_extract_clip.py -c rn50 -s train`
+- Extract CLIP features `python extraction/feat_extract_clip.py -c rn504`
+- Extract ALBEF features `python extraction/feat_extract_albef.py`
 
-Code: Coming soon...
+## Training SVM models
+- Run with clip features corresponding to Table 2 (Split with resolved label conflicts), Binary claim detection:
+
+   `python training/train_svm.py -n 2 -m clip -c rn504 -d wrc`
+   
+- Run with clip features corresponding to Table 2 (Split with resolved label conflicts), Tertiary claim detection:
+
+  `python training/train_svm.py -n 3 -m clip -c rn504 -d wrc`
+  
+- Run with clip features corresponding to Table 5 (Split without label conflicts), Tertiary claim detection:
+  
+  `python training/train_svm.py -n 3 -m clip -c rn504 -d woc`
+  
+- Replace `-m clip` with `-m albef` to use albef features.
+
+
+### To-Do
+- [ ] Fine-tuning ALBEF script
+- [ ] Direct inference with trained models script
 
 
 If you find the data or the code useful:
