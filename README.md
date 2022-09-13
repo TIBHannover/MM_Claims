@@ -54,7 +54,7 @@ python setup.py install
   
 - Train with clip features on split without label conflicts, Tertiary claim detection:
   
-  `python training/train_svm.py -n 3 -m clip -c rn50 -d woc`
+  `python training/train_svm.py -n 3 -m clip -c vit16 -d woc`
   
 - Replace `-m clip` with `-m albef` to use albef features.
 
