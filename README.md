@@ -72,9 +72,50 @@ python setup.py install
 
 ## Inference
 - Download trained svm models (above) from [here](https://tib.eu/cloud/s/5SK6BzdcfFQbN8A) and move them in `models/`
+- Evaluate svm trained with clip features on test splits, Binary claim detection:
+   `python inference/eval_svm.py -m clip -c rn504 -d wrc`
+   
+   Output should be like:
+   ```
+   ----------------- Number of classes: 2  Model: clip     CLIP model: rn504       Train split type: with_resolved_conflicts -----------------
+
+   Number of test features and labels with resolved label conflicts: (585, 1280) (585,)
+   Number of test features and labels wihtout label conflicts: (525, 1280) (525,)
+
+   Test with resolved conflicts Acc/F1: 77.78/77.39
+   Test without conflicts Acc/F1: 79.43/78.39
+   ```
+   
+- Evaluate svm trained with albef features on test splits, Binary claim detection:
+   `python inference/eval_svm.py -m albef -d wrc`
+   
+   Output should be like:
+   ```
+   ----------------- Number of classes: 2  Model: albef    CLIP model: vit         Train split type: with_resolved_conflicts -----------------
+
+   Number of test features and labels with resolved label conflicts: (585, 768) (585,)
+   Number of test features and labels wihtout label conflicts: (525, 768) (525,)
+
+   Test with resolved conflicts Acc/F1: 76.92/76.46
+   Test without conflicts Acc/F1: 78.67/77.51
+   ```
+   
+ - Evaluate svm trained with albef features on test splits, Tertiary claim detection:
+   `python inference/eval_svm.py -m albef -n 3 -d woc`
+   
+   Output should be like:
+   ```
+   ---------------- Number of classes: 3  Model: albef    CLIP model: vit         Train split type: without_conflicts -----------------
+
+   Number of test features and labels with resolved label conflicts: (585, 768) (585,)
+   Number of test features and labels wihtout label conflicts: (525, 768) (525,)
+
+   Test with resolved conflicts Acc/F1: 71.45/58.61
+   Test without conflicts Acc/F1: 75.43/55.54
+   ```
 
 ### To-Do
-- [ ] Fine-tuning and inference ALBEF script
+- [ ] Fine-tuning and inference ALBEF scripts
 
 
 If you find the data or the code useful:
