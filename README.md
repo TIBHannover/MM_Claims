@@ -72,7 +72,9 @@ python setup.py install
 
 ## Inference
 - Download trained svm models (above) from [here](https://tib.eu/cloud/s/5SK6BzdcfFQbN8A) and move them in `models/`
+
 - Evaluate svm trained with clip features on test splits, Binary claim detection:
+
    `python inference/eval_svm.py -m clip -c rn504 -d wrc`
    
    Output should be like:
@@ -87,6 +89,7 @@ python setup.py install
    ```
    
 - Evaluate svm trained with albef features on test splits, Binary claim detection:
+
    `python inference/eval_svm.py -m albef -d wrc`
    
    Output should be like:
@@ -101,6 +104,7 @@ python setup.py install
    ```
    
  - Evaluate svm trained with albef features on test splits, Tertiary claim detection:
+ 
    `python inference/eval_svm.py -m albef -n 3 -d woc`
    
    Output should be like:
