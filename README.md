@@ -77,7 +77,7 @@ python setup.py install
 
    `python inference/eval_svm.py -m clip -c rn504 -d wrc`
    
-   Output should be like:
+   Output:
    ```
    ----------------- Number of classes: 2  Model: clip     CLIP model: rn504       Train split type: with_resolved_conflicts -----------------
 
@@ -92,7 +92,7 @@ python setup.py install
 
    `python inference/eval_svm.py -m albef -d wrc`
    
-   Output should be like:
+   Output:
    ```
    ----------------- Number of classes: 2  Model: albef    CLIP model: vit         Train split type: with_resolved_conflicts -----------------
 
@@ -107,7 +107,7 @@ python setup.py install
  
    `python inference/eval_svm.py -m albef -n 3 -d woc`
    
-   Output should be like:
+   Output:
    ```
    ---------------- Number of classes: 3  Model: albef    CLIP model: vit         Train split type: without_conflicts -----------------
 
