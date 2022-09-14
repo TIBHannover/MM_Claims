@@ -74,8 +74,7 @@ python setup.py install
 - Download trained svm models (above) from [here](https://tib.eu/cloud/s/5SK6BzdcfFQbN8A) and move them in `models/`
 
 ### To-Do
-- [ ] Fine-tuning ALBEF script
-- [ ] Direct inference with trained models script
+- [ ] Fine-tuning and inference ALBEF script
 
 
 If you find the data or the code useful:

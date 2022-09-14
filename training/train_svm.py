@@ -88,7 +88,7 @@ else:
             test_woc_df['claim_three'].to_numpy(dtype=int)
 
 
-print("----------------- Number of classes:", ncls,"\tModel:", model, "\tCLIP model:", clip if model == 'clip' else 'vit', "\tSplit type:", split_type, '-----------------')
+print("----------------- Number of classes:", ncls,"\tModel:", model, "\tCLIP model:", clip if model == 'clip' else 'vit', "\tTrain split type:", split_type, '-----------------\n')
 
 all_feats = json.load(open('features/%s_%s.json'%(model, clip if model == 'clip' else 'vit'), 'r'))
 if model == 'clip':
@@ -135,7 +135,7 @@ test_preds_woc = classifier.predict(ft_test_woc)
 val_preds = classifier.predict(ft_val)
 train_preds = classifier.predict(ft_train)
 
-print('PCA No. Components: %.2f, Dim: %d, SV: %d'%(best_pca_nk, ft_val.shape[1], len(classifier.support_)))
+print('\nPCA No. Components: %.2f, Dim: %d, SV: %d'%(best_pca_nk, ft_val.shape[1], len(classifier.support_)))
 print('C: %.3f, Gamma: %.3f, kernel: %s\n'%(classifier.C, classifier.gamma, classifier.kernel))
 print('Train Acc/F1: %.2f/%.2f'%(return_metrics(lab_train, train_preds)))
 print('Val Acc/F1: %.2f/%.2f'%(return_metrics(lab_val, val_preds)))
