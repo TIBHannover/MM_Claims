@@ -8,7 +8,7 @@ The paper is available here: https://aclanthology.org/2022.findings-naacl.72/
 
 Tweet IDs and labels are available at: https://data.uni-hannover.de/dataset/mm_claims
 
-For access to images and tweets, send an email with organization (university/institute) and purpose details to gullal.cheema@tib.eu
+For access to images and tweets, send an email with organization (university/institute) and purpose/usage details to gullal.cheema@tib.eu
 
 
 ## Environment Setup
