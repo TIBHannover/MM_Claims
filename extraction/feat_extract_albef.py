@@ -64,32 +64,31 @@ model.eval()
 
 all_feat_dict = {'last': {}, 'average': {}}
 
+text_dict = json.load(open('data/labeled_text.json', 'r', encoding='utf-8'))
+
 ## Extract features
-for phase in ['train', 'val', 'test']:
-    text_dict = json.load(open('data/%s_text.json'%(phase), 'r', encoding='utf-8'))
+for key in tqdm(text_dict.keys()):
+    text = text_dict[key]['tweet_text']
+    image = Image.open(os.path.join('data/images_labeled/', key+'.jpg')).convert('RGB')
+    image_input = transform(image).to(device)
 
-    for key in tqdm(text_dict.keys()):
-        text = text_dict[key]['tweet_text']
-        image = Image.open(os.path.join('data/images_labeled/', key+'.jpg')).convert('RGB')
-        image_input = transform(image).to(device)
+    proc_text = process_tweet(text, text_processor)
+    text_input = tokenizer(proc_text, return_tensors='pt').to(device)
 
-        proc_text = process_tweet(text, text_processor)
-        text_input = tokenizer(proc_text, return_tensors='pt').to(device)
+    image_embeds = model.visual_encoder(image_input.unsqueeze(0)) 
+    image_atts = torch.ones(image_embeds.size()[:-1],dtype=torch.long).to(image_input.device)
 
-        image_embeds = model.visual_encoder(image_input.unsqueeze(0)) 
-        image_atts = torch.ones(image_embeds.size()[:-1],dtype=torch.long).to(image_input.device)
-
-        with torch.no_grad():
-            output = model.text_encoder(text_input.input_ids, 
-                                            attention_mask = text_input.attention_mask, 
-                                            encoder_hidden_states = image_embeds,
-                                            encoder_attention_mask = image_atts,  
-                                            output_hidden_states=True,      
-                                            return_dict = True
-                                            )
-        
-        all_feat_dict['last'][key] = output.last_hidden_state[:,0,:].cpu().numpy().flatten().tolist()
-        all_feat_dict['average'][key] = output.last_hidden_state.mean(dim=1).cpu().numpy().flatten().tolist()
+    with torch.no_grad():
+        output = model.text_encoder(text_input.input_ids, 
+                                        attention_mask = text_input.attention_mask, 
+                                        encoder_hidden_states = image_embeds,
+                                        encoder_attention_mask = image_atts,  
+                                        output_hidden_states=True,      
+                                        return_dict = True
+                                        )
+    
+    all_feat_dict['last'][key] = output.last_hidden_state[:,0,:].cpu().numpy().flatten().tolist()
+    all_feat_dict['average'][key] = output.last_hidden_state.mean(dim=1).cpu().numpy().flatten().tolist()
         
 
 json.dump(all_feat_dict, open('features/albef_vit.json', 'w'))

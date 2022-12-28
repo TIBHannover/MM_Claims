@@ -42,24 +42,24 @@ im_names, img_feats, text_feats = [], [], []
 model, img_preprocess = clip.load(model_nms[clip_nm], device=device)
 model.eval()
 
-for phase in ['train', 'val', 'test']:
-    text_dict = json.load(open('data/%s_text.json'%(phase), 'r', encoding='utf-8'))
-    for key in tqdm(text_dict.keys()):
-        text = text_dict[key]['tweet_text']
-        img = Image.open(os.path.join('data/images_labeled/', key+'.jpg'))
-        
-        proc_text = process_tweet(text, text_processor)
+text_dict = json.load(open('data/labeled_text.json', 'r', encoding='utf-8'))
 
-        image_tensor = img_preprocess(img).unsqueeze(0).to(device)
-        text_tokens = clip_tokenize(proc_text, _tokenizer).to(device)
+for key in tqdm(text_dict.keys()):
+    text = text_dict[key]['tweet_text']
+    img = Image.open(os.path.join('data/images_labeled/', key+'.jpg'))
+    
+    proc_text = process_tweet(text, text_processor)
 
-        with torch.no_grad():
-            image_features = model.encode_image(image_tensor)
-            text_features = model.encode_text(text_tokens)
-        
-            img_feats.append(image_features.cpu().numpy().flatten().tolist())
-            text_feats.append(text_features.cpu().numpy().flatten().tolist())
-            im_names.append(key)
+    image_tensor = img_preprocess(img).unsqueeze(0).to(device)
+    text_tokens = clip_tokenize(proc_text, _tokenizer).to(device)
+
+    with torch.no_grad():
+        image_features = model.encode_image(image_tensor)
+        text_features = model.encode_text(text_tokens)
+    
+        img_feats.append(image_features.cpu().numpy().flatten().tolist())
+        text_feats.append(text_features.cpu().numpy().flatten().tolist())
+        im_names.append(key)
 
 
 feat_dict = {}
