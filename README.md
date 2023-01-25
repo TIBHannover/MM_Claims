@@ -4,6 +4,14 @@ This is the official GitHub page for the paper:
 
 > Gullal Singh Cheema, Sherzod Hakimov, Abdul Sittar, Eric Müller-Budack, Christian Otto, and Ralph Ewerth. 2022. “MM-Claims: A Dataset for Multimodal Claim Detection in Social Media.“ *In Findings of the Association for Computational Linguistics: NAACL 2022, pages 962–979, Seattle, United States. Association for Computational Linguistics.*
 
+## ** Update **
+
+The data will be used in the CLEF [Checkthat Challenge 2023](https://checkthat.gitlab.io/). 
+
+[Register](http://clef2023-labs-registration.dei.unipd.it/registrationForm.php) and Participate.
+
+Refined labels and additional test data to be released in the challenge.
+
 ## Publication, dataset, annotation
 
 The paper is available here: https://aclanthology.org/2022.findings-naacl.72/
