@@ -82,6 +82,7 @@ python setup.py install
 
 ## Fine-tune ALBEF
 
+`python training/finetune_albef_mm.py --fr_no 8 --bs 8 --cls 2`
 
 ## Inference
 - Download trained svm models (above) from [here](https://tib.eu/cloud/s/5SK6BzdcfFQbN8A) and move them in `models/`
@@ -130,9 +131,6 @@ python setup.py install
    Test with resolved conflicts Acc/F1: 71.45/58.61
    Test without conflicts Acc/F1: 75.43/55.54
    ```
-
-### To-Do
-- [ ] Fine-tuning and inference ALBEF scripts
 
 
 If you find the data or the code useful:

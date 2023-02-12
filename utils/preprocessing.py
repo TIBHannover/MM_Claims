@@ -27,7 +27,6 @@ def process_tweet(tweet, text_processor):
     return clean_tweet
 
 
-
 def get_text_processor(word_stats='twitter', keep_hashtags=False):
     return TextPreProcessor(
             # terms that will be normalized , 'number','money', 'time','date', 'percent' removed from below list
