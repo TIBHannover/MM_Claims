@@ -132,6 +132,10 @@ python setup.py install
    Test without conflicts Acc/F1: 75.43/55.54
    ```
 
+ - Evaluate albef:
+
+   `python inference/eval_albef.py --cls 2 --model models/mmc_albef_2cls_wrc.pth`
+   
 
 If you find the data or the code useful:
 ```
