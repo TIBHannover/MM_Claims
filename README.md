@@ -10,7 +10,7 @@ The data will be used in the CLEF [Checkthat Challenge 2023](https://checkthat.g
 
 [Register](http://clef2023-labs-registration.dei.unipd.it/registrationForm.php) and Participate.
 
-Refined labels and additional test data to be released in the challenge.
+Refined labels and additional test data to be released in the challenge. [Data](https://gitlab.com/checkthat_lab/clef2023-checkthat-lab/-/tree/main/task1)
 
 ## Publication, dataset, annotation
 
