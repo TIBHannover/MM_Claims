@@ -6,11 +6,7 @@ This is the official GitHub page for the paper:
 
 ## ** Update **
 
-The data will be used in the CLEF [Checkthat Challenge 2023](https://checkthat.gitlab.io/). 
-
-[Register](http://clef2023-labs-registration.dei.unipd.it/registrationForm.php) and Participate.
-
-Refined check-worthiness labels and additional test data to be released in the challenge. [Data](https://gitlab.com/checkthat_lab/clef2023-checkthat-lab/-/tree/main/task1)
+**If you are interested in the binary task on check-worthiness estimation in multimodal claims, you can find the refined dataset with new test data released as part of the CLEF Checkthat! 2023 challenge: https://gitlab.com/checkthat_lab/clef2023-checkthat-lab/-/tree/main**
 
 ## Publication, dataset, annotation
 
@@ -159,5 +155,48 @@ If you find the data or the code useful, cite us:
   timestamp = {Mon, 18 Jul 2022 17:13:00 +0200},
   biburl    = {https://dblp.org/rec/conf/naacl/CheemaHSMOE22.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
+
+If you use the refined dataset released in the CLEF Checkthat! 2023 challenge, please cite above and the below paper as well:
+```
+@inproceedings{DBLP:conf/ecir/BarronCedenoACMEGHRSNCAN23,
+  author       = {Alberto Barr{\'{o}}n{-}Cede{\~{n}}o and
+                  Firoj Alam and
+                  Tommaso Caselli and
+                  Giovanni Da San Martino and
+                  Tamer Elsayed and
+                  Andrea Galassi and
+                  Fatima Haouari and
+                  Federico Ruggeri and
+                  Julia Maria Stru{\ss} and
+                  Rabindra Nath Nandi and
+                  Gullal S. Cheema and
+                  Dilshod Azizov and
+                  Preslav Nakov},
+  editor       = {Jaap Kamps and
+                  Lorraine Goeuriot and
+                  Fabio Crestani and
+                  Maria Maistro and
+                  Hideo Joho and
+                  Brian Davis and
+                  Cathal Gurrin and
+                  Udo Kruschwitz and
+                  Annalina Caputo},
+  title        = {The {CLEF-2023} CheckThat! Lab: Checkworthiness, Subjectivity, Political
+                  Bias, Factuality, and Authority},
+  booktitle    = {Advances in Information Retrieval - 45th European Conference on Information
+                  Retrieval, {ECIR} 2023, Dublin, Ireland, April 2-6, 2023, Proceedings,
+                  Part {III}},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {13982},
+  pages        = {506--517},
+  publisher    = {Springer},
+  year         = {2023},
+  url          = {https://doi.org/10.1007/978-3-031-28241-6\_59},
+  doi          = {10.1007/978-3-031-28241-6\_59},
+  timestamp    = {Tue, 28 Mar 2023 19:49:31 +0200},
+  biburl       = {https://dblp.org/rec/conf/ecir/BarronCedenoACMEGHRSNCAN23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 ```
