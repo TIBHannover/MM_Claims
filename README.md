@@ -16,9 +16,13 @@ Dataset with tweet IDs and labels are available at: https://data.uni-hannover.de
 
 Annotation guideline document is available here: https://github.com/TIBHannover/MM_Claims/blob/main/misc_files/annotation_doc.pdf
 
-For access to images and tweets, send an email with organization (university/institute) and purpose/usage details to gullalcheema@gmail.com
+For access to images and tweets used in **MM-Claims**, check here:
+- [Labeled Data](https://drive.google.com/drive/folders/1sL89aj2CkF2kBxR-0fAVpIV75aExZtW8?usp=sharing)
+- [Unlabeled Data](https://drive.google.com/drive/folders/13ixH_x8gBYo9ktfIz7puMgi80M00EOSQ?usp=sharing)
 
-
+For access to the **extended dataset** - images, tweets, labels and splits used in **Checkthat! 2023**, check here:
+- [Labeled Data](https://drive.google.com/drive/folders/1BiCSymRHRf7i_nvuP3ah9aN4xZBO1U-i?usp=sharing)
+- [Unlabeled Data](https://drive.google.com/drive/folders/197baR2byrSnF80TTighkztMBWRMdgYOi?usp=sharing)
 
 ## Environment Setup
 
@@ -81,7 +85,7 @@ python setup.py install
 `python training/finetune_albef_mm.py --fr_no 8 --bs 8 --cls 2`
 
 ## Inference
-- Download trained svm models (above) from [here](https://tib.eu/cloud/s/5SK6BzdcfFQbN8A) and move them in `models/`
+- Download trained svm models (above) from [here](https://drive.google.com/drive/folders/1NsfFQoJvV_k__mfwhn-Luwhsi0SKA9YJ?usp=sharing) and move them in `models/`
 
 - Evaluate svm trained with clip features on test splits, Binary claim detection:
 
