@@ -16,7 +16,7 @@ Dataset with tweet IDs and labels are available at: https://data.uni-hannover.de
 
 Annotation guideline document is available here: https://github.com/TIBHannover/MM_Claims/blob/main/misc_files/annotation_doc.pdf
 
-For access to images and tweets, send an email with organization (university/institute) and purpose/usage details to gullal.cheema@tib.eu
+For access to images and tweets, send an email with organization (university/institute) and purpose/usage details to gullalcheema@gmail.com
 
 
 
